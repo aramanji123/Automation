@@ -7,6 +7,8 @@ println "name is $name"
 println "name is ${name}"
 */
 
+//#!/usr/bin/env groovy
+
 println "/*****groovy is dynamic typing language*****/"
 def $name = "groovy script"
 name =10
