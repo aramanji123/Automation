@@ -1,4 +1,4 @@
 echo "hello world"
 
-cd ./control_structures
+cd ..
 call groovy if_else.groovy
