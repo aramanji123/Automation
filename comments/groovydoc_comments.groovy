@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 /**
  * A Class description
  */
