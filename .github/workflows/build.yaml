@@ -16,3 +16,20 @@ jobs:
         run: 'echo Hello, world!'
       - name: Run groovy script
         run: ./build.bat
+         name: Send email notification
+      -uses: dawidd6/action-send-mail@v2
+       with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: Pull request build successful
+        body: |
+          The pull request build was successful. The build artifacts can be downloaded from the following link:
+
+          ${{ github.event.repository.html_url }}/actions/artifacts/${{ github.event.pull_request.head.sha }}/build-artifacts
+
+          Thank you for your contribution!
+ to: ramut9940@gmail.com
+
+
