@@ -16,7 +16,7 @@ jobs:
         run: 'echo Hello, world!'
       - name: Run groovy script
         run: ./build.bat
-         name: Send email notification
+        name: Send email notification
       -uses: dawidd6/action-send-mail@v2
        with:
         server_address: smtp.gmail.com
@@ -31,5 +31,6 @@ jobs:
 
           Thank you for your contribution!
  to: ramut9940@gmail.com
+
 
 
