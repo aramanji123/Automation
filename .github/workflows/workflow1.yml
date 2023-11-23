@@ -23,7 +23,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { data: workflows } = await github.actions.listRepoWorkflows({
-            owner: 'aramanji123@gmail.com',
+            owner: 'aramanji123',
             repo: 'Automation'
             });
             const workflow2 = workflows.find(w => w.name === 'Workflow 2');
