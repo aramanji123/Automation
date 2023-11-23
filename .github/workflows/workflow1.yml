@@ -1,0 +1,23 @@
+# .github/workflows/workflow1.yml
+name: Workflow 1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Workflow 1
+        run: echo "Running Workflow 1"
+
+      - name: Trigger Workflow 2
+        uses: actions/workflow-dispatch@v2
+        with:
+          workflow: "Workflow 2"
