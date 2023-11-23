@@ -31,4 +31,4 @@ jobs:
               await github.actions.createWorkflowDispatch({
                 workflow_id: workflow2.id
               });
-}
+            }
