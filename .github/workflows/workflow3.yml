@@ -1,0 +1,18 @@
+# .github/workflows/workflow13.yml
+name: Workflow 3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: [ self-hosted, test ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Workflow 3
+        run: echo "Running Workflow 3"

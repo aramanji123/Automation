@@ -1,0 +1,18 @@
+# .github/workflows/workflow4.yml
+name: Workflow 4
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: [ self-hosted, test ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Workflow 4
+        run: echo "Running Workflow 4"
