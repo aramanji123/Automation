@@ -18,6 +18,14 @@ jobs:
         run: echo "Running Workflow 1"
 
       - name: Trigger Workflow 2
-        uses: actions/workflow-dispatch@v2
+        uses: actions/github-script@v4
         with:
-          workflow: "Workflow 2"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: workflows } = await github.actions.listRepoWorkflows();
+            const workflow2 = workflows.find(w => w.name === 'Workflow 2');
+            if (workflow2) {
+              await github.actions.createWorkflowDispatch({
+                workflow_id: workflow2.id
+              });
+            }
